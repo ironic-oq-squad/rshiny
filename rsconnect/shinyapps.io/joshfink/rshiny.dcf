@@ -5,9 +5,9 @@ account: joshfink
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4434160
-bundleId: 4869531
+bundleId: 4869661
 url: https://joshfink.shinyapps.io/rshiny/
-when: 1627585151.06215
-lastSyncTime: 1627585151.06219
+when: 1627587835.54367
+lastSyncTime: 1627587835.54369
 asMultiple: FALSE
 asStatic: FALSE

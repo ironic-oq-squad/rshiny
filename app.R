@@ -31,8 +31,7 @@ ui <- fluidPage(
   fluidPage(
     tags$div(
       h1(tags$strong("Data Mining Group 3: Topic Modeling with Synonyms")),
-      br(),
-      strong("Credits:"),
+      h4(tags$a(href = "https://github.com/ironic-oq-squad/rshiny", "Timing out? Clone this RShiny app on GitHub by clicking HERE!"))),
       p("By Anik Burman, Joshua Fink, Sasha Lioutikova, and Grace Smith", tags$br(), 
         "Supervised by Dr. Johann Gagnon-Bartsch, Juejue Wang, and Heather Johnston", tags$br(),
         "Big Data Summer Institute, University of Michigan, 2021", tags$br(),
@@ -44,7 +43,7 @@ ui <- fluidPage(
       sidebarPanel(width = 3,
                    tags$div(
                      h3("Input Data"),
-                     p(".csv files on website are okay, however need to shrink them! Assumes csv has one column with header 'text'. Adjust the 'Percentage of csv dataset used' to reduce csv dataset for compuatational purposes.")
+                     p("Assumes csv has one column with header 'text'. Adjust the 'Percentage of csv dataset used' to reduce csv dataset size for compuatational purposes.")
                    ),
                    fileInput(
                      inputId = "csvFile",
@@ -69,7 +68,7 @@ ui <- fluidPage(
         visOutput('myChart')
       ),
     ),
-))
+)
 
 
 server <- function(input, output, session) {
@@ -138,7 +137,7 @@ server <- function(input, output, session) {
     if(is.null(fileData())) {
       return(NULL)
     }
-    grid_search_topic_k[which.max(mod_log_lik())]
+    return(grid_search_topic_k[which.max(mod_log_lik())])
   })
   
   output$maxLikelihoodPlot <- renderPlot({
